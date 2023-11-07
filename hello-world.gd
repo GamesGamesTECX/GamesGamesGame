@@ -1,5 +1,9 @@
 extends Node
 
 func _ready():
-	var eu = "Vini"
-	print("Hello " + eu)
+	var nameVini = "Vini"
+	print("Hello " + nameVini)
+
+	var nameJoao = "Joao"
+	print("Hello "+ nameJoao)
+	
