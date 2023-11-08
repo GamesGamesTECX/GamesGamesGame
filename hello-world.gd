@@ -6,4 +6,7 @@ func _ready():
 
 	var nameJoao = "Joao"
 	print("Hello "+ nameJoao)
+
+	var nameHenrique = "Henrique"
+	print("Hello " + nameHenrique)
 	
