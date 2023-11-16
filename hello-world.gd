@@ -6,4 +6,3 @@ func _ready():
 
 	var nameJoao = "Joao"
 	print("Hello "+ nameJoao)
-	
