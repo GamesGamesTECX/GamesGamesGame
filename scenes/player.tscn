@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://bg67xt5fqx2v"]
 
 [ext_resource type="Texture2D" uid="uid://bgkd5incugf6u" path="res://assets/gun_sprites.png" id="1_esewd"]
-[ext_resource type="Script" path="res://player.gd" id="1_u6bsr"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_f02n2"]
 [ext_resource type="AudioStream" uid="uid://667e2uidoyxd" path="res://assets/revolver_shot1.wav" id="2_bcsay"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tfoej"]
@@ -59,7 +59,7 @@ animations = [{
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 collision_layer = 2
 collision_mask = 3
-script = ExtResource("1_u6bsr")
+script = ExtResource("1_f02n2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
