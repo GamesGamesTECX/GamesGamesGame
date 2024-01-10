@@ -2,11 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://bgkd5incugf6u" path="res://assets/gun_sprites.png" id="1_esewd"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_f02n2"]
+[ext_resource type="PackedScene" uid="uid://dew132n10jwji" path="res://scenes/body.tscn" id="2_64sy1"]
 [ext_resource type="AudioStream" uid="uid://667e2uidoyxd" path="res://assets/revolver_shot1.wav" id="2_bcsay"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tfoej"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_k4ieh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7i5vk"]
 atlas = ExtResource("1_esewd")
@@ -65,8 +64,8 @@ script = ExtResource("1_f02n2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_tfoej")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
-mesh = SubResource("CapsuleMesh_k4ieh")
+[node name="body" parent="CollisionShape3D" instance=ExtResource("2_64sy1")]
+transform = Transform3D(-1, 0, -8.54386e-08, 0, 1, 0, 8.54386e-08, 0, -1, 0, -1, 0)
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
@@ -74,7 +73,7 @@ target_position = Vector3(0, 0, -1000)
 collision_mask = 3
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8147, -0.148935)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
