@@ -43,3 +43,6 @@ material = SubResource("ShaderMaterial_8th3x")
 position = Vector2(573, 327)
 scale = Vector2(9.2014, 5.26239)
 texture = ExtResource("4_knlj3")
+
+[connection signal="can_shoot_changed" from="Player" to="CameraWorld" method="_on_player_can_shoot_changed"]
+[connection signal="can_transition_camera_changed" from="Player" to="CameraWorld" method="_on_player_can_transition_camera_changed"]
