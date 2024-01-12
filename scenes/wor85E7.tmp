@@ -1,7 +1,6 @@
-[gd_scene load_steps=31 format=3 uid="uid://c6vliiuc3qsaw"]
+[gd_scene load_steps=29 format=3 uid="uid://c6vliiuc3qsaw"]
 
 [ext_resource type="PackedScene" uid="uid://bg67xt5fqx2v" path="res://scenes/player.tscn" id="1_2641h"]
-[ext_resource type="PackedScene" uid="uid://c2txch3tmotcs" path="res://assets/Furniture/KayKit_Furniture_Bits_1.0_FREE/Assets/gltf/book_single.gltf" id="1_hrls0"]
 [ext_resource type="Script" path="res://scripts/camera_transition.gd" id="2_ta1v2"]
 [ext_resource type="Shader" path="res://scripts/PixelShader.gdshader" id="3_05gpk"]
 [ext_resource type="Texture2D" uid="uid://bot47ci8203no" path="res://assets/icon.svg" id="4_knlj3"]
@@ -35,8 +34,6 @@ albedo_color = Color(0.4, 0.4, 0.4, 1)
 
 [sub_resource type="Environment" id="Environment_opnrs"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_tw7wd"]
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8th3x"]
 shader = ExtResource("3_05gpk")
 shader_parameter/pixelate = 302.0
@@ -65,19 +62,10 @@ mesh = SubResource("PlaneMesh_pj3hp")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_opnrs")
 
-[node name="book_single" parent="WorldEnvironment" instance=ExtResource("1_hrls0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.43939, 1.50618, 0.139016)
-script = ExtResource("9_156m0")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment/book_single"]
-transform = Transform3D(-0.433013, -0.5, 0.75, 0.216506, 0.75, 0.625, -0.875, 0.433013, -0.216507, 5.82057, 3.27238, -0.223504)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(-0.433013, -0.5, 0.75, 0.216506, 0.75, 0.625, -0.875, 0.433013, -0.216507, 2.38118, 4.77856, -0.0844874)
 light_color = Color(1, 0.968627, 1, 1)
-
-[node name="interaction_area" parent="WorldEnvironment/book_single" instance=ExtResource("9_llyhy")]
-action_name = "test2"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/book_single/interaction_area"]
-shape = SubResource("BoxShape3D_tw7wd")
+light_energy = 0.2
 
 [node name="Player" parent="." instance=ExtResource("1_2641h")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2, 0, 0)
@@ -87,7 +75,6 @@ transform = Transform3D(-0.557709, -0.521476, 0.645774, 0.0596641, 0.750808, 0.6
 script = ExtResource("2_ta1v2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
 material = SubResource("ShaderMaterial_8th3x")
 position = Vector2(573, 327)
 scale = Vector2(9.2014, 5.26239)
@@ -105,16 +92,14 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.5317
 [node name="lamp_standing" parent="." instance=ExtResource("12_m3v57")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 2.34056, 0, 3.40285)
 script = ExtResource("9_156m0")
-is_lamp = true
 
 [node name="SpotLight3D" type="SpotLight3D" parent="lamp_standing"]
 transform = Transform3D(1.66667, 0, 0, 0, 1.98682e-07, 1.66667, 0, -1.66667, 1.98682e-07, -0.0376165, 2.33327, 0.07725)
 
 [node name="interaction_area" parent="lamp_standing" instance=ExtResource("9_llyhy")]
-action_name = "test"
 
 [node name="CollisionShape2D" type="CollisionShape3D" parent="lamp_standing/interaction_area"]
-transform = Transform3D(2.11786, 0, 0, 0, 1, 0, 0, 0, 2.33834, 0.416998, 1.66667, -1.03738)
+transform = Transform3D(2.11786, 0, 0, 0, 1, 0, 0, 0, 2.33834, 0.250332, 1.66667, -0.656571)
 shape = SubResource("CylinderShape3D_t5vns")
 
 [node name="rug_rectangle_stripes_B" parent="." instance=ExtResource("13_8bnqk")]

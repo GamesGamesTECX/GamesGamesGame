@@ -74,7 +74,6 @@ transform = Transform3D(-0.433013, -0.5, 0.75, 0.216506, 0.75, 0.625, -0.875, 0.
 light_color = Color(1, 0.968627, 1, 1)
 
 [node name="interaction_area" parent="WorldEnvironment/book_single" instance=ExtResource("9_llyhy")]
-action_name = "test2"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="WorldEnvironment/book_single/interaction_area"]
 shape = SubResource("BoxShape3D_tw7wd")
@@ -87,7 +86,6 @@ transform = Transform3D(-0.557709, -0.521476, 0.645774, 0.0596641, 0.750808, 0.6
 script = ExtResource("2_ta1v2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
 material = SubResource("ShaderMaterial_8th3x")
 position = Vector2(573, 327)
 scale = Vector2(9.2014, 5.26239)
@@ -111,7 +109,6 @@ is_lamp = true
 transform = Transform3D(1.66667, 0, 0, 0, 1.98682e-07, 1.66667, 0, -1.66667, 1.98682e-07, -0.0376165, 2.33327, 0.07725)
 
 [node name="interaction_area" parent="lamp_standing" instance=ExtResource("9_llyhy")]
-action_name = "test"
 
 [node name="CollisionShape2D" type="CollisionShape3D" parent="lamp_standing/interaction_area"]
 transform = Transform3D(2.11786, 0, 0, 0, 1, 0, 0, 0, 2.33834, 0.416998, 1.66667, -1.03738)

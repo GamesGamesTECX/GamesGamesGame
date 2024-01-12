@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://dew132n10jwji"]
 
-[ext_resource type="PackedScene" uid="uid://d2vvc551h67ij" path="res://scenes/casual_male_-_architectural_and_mobile_games.glb" id="1_83jtd"]
+[ext_resource type="PackedScene" uid="uid://d2vvc551h67ij" path="res://assets/casual_male_-_architectural_and_mobile_games.glb" id="1_t26pw"]
 
-[node name="casual_male_-_architectural_and_mobile_games" instance=ExtResource("1_83jtd")]
+[node name="casual_male_-_architectural_and_mobile_games" instance=ExtResource("1_t26pw")]
 
 [node name="Skeleton3D" parent="Sketchfab_model/169f8fdae51741dbb7f972eed4197de8_fbx/Object_2/RootNode/Rig/Object_5" index="0"]
 bones/1/position = Vector3(-4.56639e-19, 0.0239355, 0.870069)
