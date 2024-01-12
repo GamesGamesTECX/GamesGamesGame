@@ -83,3 +83,7 @@ run_forward={
 
 3d_navigation/layer_1="enviroment"
 3d_navigation/layer_2="characters"
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

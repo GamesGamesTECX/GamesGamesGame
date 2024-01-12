@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dwftendoaob3o"
+path="res://.godot/imported/rug_oval_A.obj-62715f981e7cdec40d3343dc21ead2ac.mesh"
+
+[deps]
+
+files=["res://.godot/imported/rug_oval_A.obj-62715f981e7cdec40d3343dc21ead2ac.mesh"]
+
+source_file="res://Furniture/KayKit_Furniture_Bits_1.0_FREE/Assets/obj/rug_oval_A.obj"
+dest_files=["res://.godot/imported/rug_oval_A.obj-62715f981e7cdec40d3343dc21ead2ac.mesh", "res://.godot/imported/rug_oval_A.obj-62715f981e7cdec40d3343dc21ead2ac.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

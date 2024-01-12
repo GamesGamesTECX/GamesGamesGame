@@ -1,41 +1,76 @@
-[gd_scene load_steps=9 format=3 uid="uid://c6vliiuc3qsaw"]
+[gd_scene load_steps=26 format=3 uid="uid://c6vliiuc3qsaw"]
 
 [ext_resource type="PackedScene" uid="uid://bg67xt5fqx2v" path="res://scenes/player.tscn" id="1_2641h"]
 [ext_resource type="Script" path="res://scripts/camera_transition.gd" id="2_ta1v2"]
-[ext_resource type="Shader" path="res://PixelShader.gdshader" id="3_jn848"]
+[ext_resource type="Shader" path="res://scripts/PixelShader.gdshader" id="3_05gpk"]
 [ext_resource type="Texture2D" uid="uid://bot47ci8203no" path="res://assets/icon.svg" id="4_knlj3"]
+[ext_resource type="PackedScene" uid="uid://ib41m42annqj" path="res://GLB format/box-large.glb" id="5_pigj1"]
+[ext_resource type="PackedScene" uid="uid://bs2f14ly4rvs3" path="res://GLB format/box-long.glb" id="6_sh8mh"]
+[ext_resource type="PackedScene" uid="uid://qmrlx17aubyc" path="res://GLB format/box-small.glb" id="7_6aw45"]
+[ext_resource type="PackedScene" uid="uid://cr272xk316hjq" path="res://GLB format/box-wide.glb" id="8_155os"]
+[ext_resource type="PackedScene" uid="uid://d2j2qlcfmetyi" path="res://Furniture/KayKit_Furniture_Bits_1.0_FREE/Assets/gltf/table_small.gltf" id="9_ubinf"]
+[ext_resource type="PackedScene" uid="uid://brt4ctnnsx3x7" path="res://Furniture/KayKit_Furniture_Bits_1.0_FREE/Assets/gltf/chair_A_wood.gltf" id="10_16n2b"]
+[ext_resource type="PackedScene" uid="uid://bqsyvy1tjda2f" path="res://Furniture/KayKit_Furniture_Bits_1.0_FREE/Assets/gltf/couch_pillows.gltf" id="11_3ef16"]
+[ext_resource type="PackedScene" uid="uid://b6ti2h0ka8jor" path="res://Furniture/KayKit_Furniture_Bits_1.0_FREE/Assets/gltf/cactus_medium_A.gltf" id="11_bxu5c"]
+[ext_resource type="PackedScene" uid="uid://h2w8n4viiqjg" path="res://Furniture/KayKit_Furniture_Bits_1.0_FREE/Assets/gltf/lamp_standing.gltf" id="12_m3v57"]
+[ext_resource type="PackedScene" uid="uid://dybhr2bumfg7p" path="res://Furniture/KayKit_Furniture_Bits_1.0_FREE/Assets/gltf/rug_rectangle_stripes_B.gltf" id="13_8bnqk"]
+[ext_resource type="PackedScene" uid="uid://blppc7irln512" path="res://Furniture/KayKit_Furniture_Bits_1.0_FREE/Assets/gltf/shelf_B_large_decorated.gltf" id="14_opoo3"]
+[ext_resource type="PackedScene" uid="uid://lp5h8gytwt6v" path="res://Furniture/KayKit_Furniture_Bits_1.0_FREE/Assets/gltf/cactus_small_B.gltf" id="15_q3ycl"]
+[ext_resource type="PackedScene" uid="uid://byt8b88k8sc8p" path="res://Furniture/KayKit_Furniture_Bits_1.0_FREE/Assets/gltf/book_set.gltf" id="16_0exle"]
+[ext_resource type="PackedScene" uid="uid://622vyudqoerk" path="res://Furniture/KayKit_Furniture_Bits_1.0_FREE/Assets/gltf/armchair_pillows.gltf" id="17_w45q0"]
+[ext_resource type="PackedScene" uid="uid://8jpr0oejqdvv" path="res://Furniture/KayKit_Furniture_Bits_1.0_FREE/Assets/gltf/pictureframe_standing_B.gltf" id="19_78xpv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ldgcq"]
-albedo_color = Color(0.396078, 0, 0.00784314, 1)
+albedo_color = Color(0.392157, 0.392157, 0.392157, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_bleii"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1fdbk"]
+albedo_color = Color(0.4, 0.4, 0.4, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_pj3hp"]
 
 [sub_resource type="Environment" id="Environment_opnrs"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8th3x"]
-shader = ExtResource("3_jn848")
-shader_parameter/pixelate = 256.0
+shader = ExtResource("3_05gpk")
+shader_parameter/pixelate = 302.0
 
 [node name="World" type="Node3D"]
 
 [node name="Enviroment" type="Node3D" parent="."]
 
 [node name="Ground" type="MeshInstance3D" parent="Enviroment"]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+transform = Transform3D(3.7526, 0, 0, 0, 5, 0, 0, 0, 4.09096, 0, 0, 0)
 material_override = SubResource("StandardMaterial3D_ldgcq")
 mesh = SubResource("PlaneMesh_bleii")
+
+[node name="Wall" type="MeshInstance3D" parent="Enviroment"]
+transform = Transform3D(3.7, 0, 0, 0, -4.37114e-08, 1.5, 0, -1, -6.55671e-08, 0, 1.5, 4)
+material_override = SubResource("StandardMaterial3D_1fdbk")
+mesh = SubResource("PlaneMesh_pj3hp")
+
+[node name="Wall2" type="MeshInstance3D" parent="Enviroment"]
+transform = Transform3D(3.01992e-07, 1, 6.55671e-08, 0, -4.37114e-08, 1.5, 4, -7.54979e-08, -4.95018e-15, -3.4571, 1.50567, -0.0349822)
+material_override = SubResource("StandardMaterial3D_1fdbk")
+mesh = SubResource("PlaneMesh_pj3hp")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_opnrs")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
-transform = Transform3D(1, 0, 0, 0, -0.0124265, 0.999923, 0, -0.999923, -0.0124265, 0, 2.07093, 0)
+transform = Transform3D(-0.433013, -0.5, 0.75, 0.216506, 0.75, 0.625, -0.875, 0.433013, -0.216507, 2.38118, 4.77856, -0.0844874)
+light_color = Color(1, 0.968627, 1, 1)
+light_energy = 0.2
+
+[node name="SpotLight3D" type="SpotLight3D" parent="WorldEnvironment"]
+transform = Transform3D(1, 0, 0, 0, 1.19209e-07, 1, 0, -1, 1.19209e-07, 2.31799, 1.39996, 3.4492)
 
 [node name="Player" parent="." instance=ExtResource("1_2641h")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2, 0, 0)
 
 [node name="CameraWorld" type="Camera3D" parent="."]
-transform = Transform3D(-4.37114e-08, -0.5, 0.866025, 0, 0.866025, 0.5, -1, 2.18557e-08, -3.78552e-08, 6, 4, 0)
+transform = Transform3D(-0.557709, -0.521476, 0.645774, 0.0596641, 0.750808, 0.657821, -0.82789, 0.405402, -0.387619, 4, 5, -3)
 script = ExtResource("2_ta1v2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -43,6 +78,51 @@ material = SubResource("ShaderMaterial_8th3x")
 position = Vector2(573, 327)
 scale = Vector2(9.2014, 5.26239)
 texture = ExtResource("4_knlj3")
+
+[node name="box-large" parent="." instance=ExtResource("5_pigj1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.90296, 0, 2.3595)
+
+[node name="box-small" parent="box-large" instance=ExtResource("7_6aw45")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.429518, 0)
+
+[node name="box-long" parent="box-large" instance=ExtResource("6_sh8mh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0642416, 0, -1.00572)
+
+[node name="box-wide" parent="." instance=ExtResource("8_155os")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.95162, 0, -3.16375)
+
+[node name="cactus_medium_A" parent="." instance=ExtResource("11_bxu5c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.85338, 0, 3.4383)
+
+[node name="chair_A_wood" parent="." instance=ExtResource("10_16n2b")]
+transform = Transform3D(0.013299, 0, 0.999912, 0, 1, 0, -0.999912, 0, 0.013299, -2.77128, 0, -0.615805)
+
+[node name="couch_pillows" parent="." instance=ExtResource("11_3ef16")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.531713, 0, 3.10043)
+
+[node name="lamp_standing" parent="." instance=ExtResource("12_m3v57")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 2.34056, 0, 3.40285)
+
+[node name="rug_rectangle_stripes_B" parent="." instance=ExtResource("13_8bnqk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.500066, 0, 1.25656)
+
+[node name="shelf_B_large_decorated" parent="." instance=ExtResource("14_opoo3")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.40985, 1.74792, -2.47779)
+
+[node name="cactus_small_B" parent="." instance=ExtResource("15_q3ycl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.78014, 0, 0.764977)
+
+[node name="book_set" parent="." instance=ExtResource("16_0exle")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.97568, 0, -1.92717)
+
+[node name="armchair_pillows" parent="." instance=ExtResource("17_w45q0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.53908, 0, -1.1677)
+
+[node name="table_small" parent="." instance=ExtResource("9_ubinf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1394, 0, -3.55828)
+
+[node name="pictureframe_standing_B" parent="." instance=ExtResource("19_78xpv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1393, 0.997743, -3.50258)
 
 [connection signal="can_shoot_changed" from="Player" to="CameraWorld" method="_on_player_can_shoot_changed"]
 [connection signal="can_transition_camera_changed" from="Player" to="CameraWorld" method="_on_player_can_transition_camera_changed"]
